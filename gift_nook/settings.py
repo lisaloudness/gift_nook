@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b#c410_u7cnuo8ygd6y770no=()#6sgc+y@#g7%=wg*o$8#=q(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-c304a2ggszx.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-dg7r6g8wzg0.ws-eu114.gitpod.io']
 
 
 # Application definition
