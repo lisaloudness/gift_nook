@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: url('/media/home_background_3.jpeg') no-repeat center center fixed;
+    background: url('/media/gift.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 180px);
     color: #555;
