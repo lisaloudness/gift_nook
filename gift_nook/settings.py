@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
 
+    #other
+    'crispy_forms',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,6 +65,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'gift_nook.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -76,8 +81,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.context.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
+
         },
     },
 ]
