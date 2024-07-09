@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bagtools %}
 
 
 {% block page_header %}
@@ -61,7 +62,62 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
             </form>
+                                <!-- Display the items -->
+                                {% for item in bag_items %}
+                                <div class="row mb-2">
+                                    <div class="col-3 pe-0">
+                                        <a href="{% url 'product_detail' item.product.id %}">
+                                            {% if item.product.image %}
+                                                <img class="w-100" src="{{ item.product.image.url }}" 
+                                                    alt="{{ product.name }}">
+                                            {% else %}
+                                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" 
+                                                    alt="{{ product.name }}">
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="my-0 small"><strong>{{ item.product.name }}</strong></p>
+                                        <p class="my-0 small">Qty: {{ item.quantity }}</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p class="my-0 small">
+                                            ${{ item.product.price | calc_subtotal:item.quantity }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <hr class="my-3">
+                        <!-- Grand Total calculation -->
+                        <div class="row text-black text-right">
+                            <div class="col-7 offset-2">
+                                <p class="my-0">Order Total:</p>
+                                <p class="my-0">Delivery:</p>
+                                <p class="my-0">Grand Total:</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="my-0">${{ total | floatformat:2 }}</p>
+                                <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                                <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                            </div>
+                        </div>
+                        <!-- Buttons to Go Back to Bag Page or to Complete The Order -->
+                        <div class="submit-button mt-5 justify-content-end d-flex flex-column flex-sm-row ">                    
+                            <a href="{% url 'view_bag' %}" class="btn btn-brown-inverted mb-2 mb-sm-0 me-sm-2">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Adjust Bag</span>
+                            </a>
+                            <button id="submit-button" type="submit" form="payment-form" class="btn btn-brown">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                        </div>
 
+    
             
         </div>
     </section>
