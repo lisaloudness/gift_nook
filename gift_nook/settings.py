@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b#c410_u7cnuo8ygd6y770no=()#6sgc+y@#g7%=wg*o$8#=q(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-gbbl28tjhtz.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-u8uigocjvdj.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -59,12 +59,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
+    # "allauth.account.middleware.AccountMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = 'gift_nook.urls'
-
+CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
