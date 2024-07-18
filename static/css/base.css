@@ -28,6 +28,10 @@ body {
     width: fit-content;
 }
 
+.bg-pink {
+    background: rgb(192, 101, 165);
+}
+
 .shop-now-button {
     background: black;
     color: white;
@@ -38,6 +42,7 @@ body {
     background: black;
     color: white;
 }
+
 
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -94,6 +99,9 @@ body {
     overflow-y: auto;
 }
 
+
+
+
 img {
     width: 100%;
     height:auto;
@@ -121,5 +129,6 @@ img {
 
     .header-container {
         padding-top: 164px;
+        position: fixed;
     }
 }
