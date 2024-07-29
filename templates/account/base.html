@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load i18n %}
 <!DOCTYPE html>
 <html>
@@ -34,8 +35,19 @@
         {% endif %}
       </ul>
     </div>
-    {% block content %}
-    {% endblock %}
+{% block content %}
+  <div class="container mx-auto">
+    <div class="overlay"></div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="allauth-form-inner-content">
+                {% block inner_content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+  </div>  
+  {% endblock %}
     {% endblock %}
     {% block extra_body %}
     {% endblock %}
