@@ -1,0 +1,7 @@
+#profile-update-form .form-control {
+    color: #000;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
