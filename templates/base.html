@@ -18,6 +18,12 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <!-- Favicon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+      <link rel="manifest" href="/site.webmanifest">
+
     {% endblock %}
 
     {% block extra_css %}
@@ -43,8 +49,10 @@
   <body>
     <header class="container-fluid">
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link"><strong>Gift Nook</strong></a>
+        <div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-left">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <img src="/media/logo.png" alt="gift nook logo">
+          </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <form method="GET" action="{% url 'products' %}">
@@ -71,7 +79,7 @@
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                      <a href="" class="dropdown-item">Product Management</a>
+                      <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                     {% endif %}
                       <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                       <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
