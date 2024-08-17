@@ -43,6 +43,11 @@ body {
     color: white;
 }
 
+.btn-purple {
+    background: rgb(180, 10, 140);
+    color: white;
+}
+
 .btn-outline-black {
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
