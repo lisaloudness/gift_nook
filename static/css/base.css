@@ -26,7 +26,12 @@ body {
 
 .main-logo-link {
     width: fit-content;
+    font-size: 40px;
+    color: rgb(192, 101, 165);
+    font-style: oblique;
+
 }
+
 
 .bg-pink {
     background: rgb(192, 101, 165);
