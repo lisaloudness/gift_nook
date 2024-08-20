@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-u8uigocjvdj.ws.codeinstitute-ide.net', 'https://gift-nook-cae3a727fe6e.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-u8uigocjvdj.ws.codeinstitute-ide.net', 'gift-nook-cae3a727fe6e.herokuapp.com', 'localhost']
 
 
 # Application definition
