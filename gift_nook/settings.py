@@ -29,7 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-lisaloudness-giftnook-u8uigocjvdj.ws.codeinstitute-ide.net', 'gift-nook-cae3a727fe6e.herokuapp.com', 'localhost']
+CSRF_TRUSTED_ORIGINS = ["https://*.codeanyapp.com", "https://*.herokuapp.com", "https://*.gitpod.io", "https://*.codeinstitute-ide.net"
+]
+
+ALLOWED_HOSTS = [".codeanyapp.com", ".herokuapp.com", ".gitpod.io", ".codeinstitute-ide.net"]
 
 
 # Application definition
@@ -113,7 +116,7 @@ SITE_ID = 1
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -223,7 +226,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'giftnook.register@gmail.com'
+    DEFAULT_FROM_EMAIL = 'giftnook@example.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
