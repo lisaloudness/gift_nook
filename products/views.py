@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+from reviews.models import ProductReview
 
 # Create your views here.
 def all_products(request):
@@ -61,9 +62,11 @@ def product_detail(request, product_id):
     """ A view to show all products, including sorting and search queries """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = ProductReview.objects.filter(reviewed_product_id=product_id)
 
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
