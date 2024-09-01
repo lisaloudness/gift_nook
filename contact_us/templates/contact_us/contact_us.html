@@ -3,7 +3,7 @@
 {% block extra_title %} - Contact Page{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'contact_us/css/contact_us.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <section>
+    <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <p>Have you read 
-                    <a href="{% url 'faq' %}">Frequently Asked Questions</a> 
+                    <a href="">Frequently Asked Questions</a> 
                     and didn't find your question there? You can call us, send us an email, 
                     or fill out this contact form below. 
                     Please note that our customer service teams are very busy just now 
@@ -29,29 +29,29 @@
                 </p>
             </div>
             <!-- Phone -->
-            <div class="text-center my-5">
+             <div class="row">
+            <div class="col-6 text-center my-2">
                 <h4 class="fw-bold">Call Us</h4>
-                <p class="m-0">088 - 123 45 67</p>
+                <p class="m-0">044 - 765 43 21</p>
                 <p>Monday - Friday 09:00 - 18:00</p>
             </div>
             <!-- Email -->
-            <div class="text-center my-5">
+            <div class="col-6 text-center my-2">
                 <h4 class="fw-bold">Email Us</h4>
-                <p>customerservice@shoesandmore.com</p>
+                <p>customerservice@giftnook.com</p>
             </div>
+        </div>
             <!-- Contact Form -->
             <div class="row">
                 <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
-                    <div class="my-5 mx-xl-5 contact-wrapper py-5 position-relative">
-                        <div class="position-absolute top-0 start-50 translate-middle bg-white px-3">
-                            <h4 class="fw-bold text-center">Contact Form</h4>
-                        </div>
+                    <div class="my-5 mx-xl-5 contact-wrapper py-2 position-relative">
+                        <h4 class="text text-center">Contact Form</h4>
                         <div class="px-2 px-md-5">
-                            <form action="{% url 'contact' %}" method="POST">
+                            <form action="{% url 'contact_us' %}" method="POST">
                                 {% csrf_token %}
                                 {{ form | crispy }} 
                                 <div class="text-center mt-5">
-                                    <button class="btn btn-beige" type="submit">
+                                    <button class="btn btn-black" type="submit">
                                         Send Message
                                     </button>
                                 </div>               
@@ -61,5 +61,4 @@
                 </div>
             </div>
         </div>
-    </section>
 {% endblock %}
