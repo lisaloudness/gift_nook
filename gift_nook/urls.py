@@ -30,5 +30,6 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('contact_us/', include('contact_us.urls')),
     path('faq/', include('faq.urls')),
+    path('blogs/', include('blogs.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
