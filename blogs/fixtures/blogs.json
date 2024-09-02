@@ -1,0 +1,41 @@
+[
+    {
+        "pk": 1,
+        "model": "blogs.blog",
+        "fields": {
+            "image": "4x3a4692-crop-1370x900.jpg",
+            "author": 1,
+            "title": "Fabulous Baby Shower Gifts Ideas for Mum and Baby",
+            "paragraph1": "Choosing the right baby shower gift can be a delightful but challenging task. Whether you are gifting for the baby, the mum-to-be or both, it’s essential to find something that’s both thoughtful and practical. With baby shower traditions evolving, the variety of gift options has expanded, catering to different parenting styles and preferences. This guide will help you navigate the art of baby shower gifting, providing curated suggestions that will surely leave a lasting impression.",
+            "paragraph2": "When selecting a baby shower gift, it’s important to consider three key factors: practicality, uniqueness and personalisation. Baby showers are traditionally about equipping new parents with the essentials they’ll need once their little one arrives. However, this doesn't mean you should shy away from a personal touch that will make your gift stand out. For example, a beautifully assembled hamper can be both practical and luxurious. You might include a personalised blanket, skincare and relaxation products or a soft toy. Such gifts not only meet the immediate needs of mum and baby but also provide the family with something they can cherish for years to come.",
+            "paragraph3": "Another great option is a personalised locket or family jewellery. These pieces feature the name of each family member, with the potential to add new charms as the family expands. For a mother, receiving a necklace that carries the name of her children is more than just a piece of jewellery, it's a cherished symbol of her love and connection to her family. Whether a simple, elegant name design or a more intricate piece with birth flowers, personalised jewellery offers a touch of sentimentality to any jewellery collection.",
+            "created_on": "2022-06-22 15:50"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "blogs.blog",
+        "fields": {
+            "image": "4x3a0169copy-1370x900.jpg",
+            "author": 1,
+            "title": "Heartfelt Bereavement Gifts for a Loved One Suffering with Loss",
+            "paragraph1": "Losing a loved one is an incredibly tough and emotional experience, and words often fall short of expressing our feelings. During these times, the support of friends and family is invaluable, providing comfort and strength when it’s needed most. When you can’t be there in person, a gift can serve as a lasting reminder of your love and support, offering comfort when words fail. These sympathy gifts can honour the memory of the deceased and remind the grieving person they are not alone.",
+            "paragraph2": "Choosing whether to give a gift to someone who is grieving can be delicate. Acknowledging their grief is crucial as it shows their pain is recognised and shared. Whether practical or sentimental, gifts play a key role in expressing sympathy and support, reminding them they are not alone.",
+            "paragraph3": "When considering a bereavement gift, think about your relationship with the grieving and the circumstances of their loss. While there’s no strict timeline, sending a gift shortly after the loss or bringing a thoughtful token to a memorial service can provide much-needed comfort. The intention behind the gift—showing care, support, and solidarity—matters most.",
+            "created_on": "2024-05-22 15:59"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "blogs.blog",
+        "fields": {
+            "image": "guy-best-friend-gifts-blog-banner-1370x900.jpg",
+            "author": 1,
+            "title": "Great Gift Ideas for Your Male Best Friend",
+            "paragraph1": "Men are notoriously hard to buy for and often declare that they don't want or need anything at all, but if you're keen to ignore that advice and treat them anyway, it can be tricky to know where to begin. Best friends of any kind deserve to be appreciated, and sometimes a thoughtful gift is the best way to do this. A male best friend is no exception, and if you want to gift him something to demonstrate the value he brings to your life, you'll want to get the present just right. Whether you're scouring the shops for a special gift for a birthday, Christmas, or ‘just because’, this helpful guide is on hand to ensure you'll find something you can't wait to see him open, and something that will guarantee the biggest smile on his face.",
+            "paragraph2": "Everyone deserves a treat from time-to-time, even if they don't think they need anything. A gift can help express all manner of emotions and celebrations, and can allow the recipient to feel special. Women don't think twice about gifting something great to a female best friend, so it's only right that the same goes when a person has a guy best friend. The main points to consider when getting him a gift are the occasion you're celebrating, the budget you're sticking to, and the recipient's likes, dislikes, needs, and desires.",
+            "paragraph3": "We're confident that the more you explore gifts for your super special guy best friend, the more the ideas will multiply. Whether he's a self-confessed foodie, a keen gardener, or he's obsessed with all things tech, our Gifts for Men edit has got you covered for unique gift ideas with a personal spin. And it's not just what's inside the gift bag, either, as you can spoil a fab male friend with a meal out, a day trip, or just a couple of drinks at the pub. Once you've found the perfect present to suit his style, interests, and your budget, surround him and yourself with other friends and loved ones with a tipple or two and celebrate all things friendship.",
+            "created_on": "2024-04-22 16:05"
+        }
+    }
+]
