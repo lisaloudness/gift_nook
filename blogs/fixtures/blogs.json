@@ -29,7 +29,7 @@
         "pk": 3,
         "model": "blogs.blog",
         "fields": {
-            "image": "guy-best-friend-gifts-blog-banner-1370x900.jpg",
+            "image": "guy-best-friend-gifts-blog-banner-1370x900.png",
             "author": 1,
             "title": "Great Gift Ideas for Your Male Best Friend",
             "paragraph1": "Men are notoriously hard to buy for and often declare that they don't want or need anything at all, but if you're keen to ignore that advice and treat them anyway, it can be tricky to know where to begin. Best friends of any kind deserve to be appreciated, and sometimes a thoughtful gift is the best way to do this. A male best friend is no exception, and if you want to gift him something to demonstrate the value he brings to your life, you'll want to get the present just right. Whether you're scouring the shops for a special gift for a birthday, Christmas, or ‘just because’, this helpful guide is on hand to ensure you'll find something you can't wait to see him open, and something that will guarantee the biggest smile on his face.",

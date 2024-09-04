@@ -37,6 +37,10 @@ body {
     background: rgb(192, 101, 165);
 }
 
+.bg-footer {
+    background: rgb(235, 150, 209);
+}
+
 .shop-now-button {
     background: black;
     color: white;
@@ -83,7 +87,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: linear-gradient(109.6deg, rgb(255, 221, 225) 11.2%, rgb(255, 255, 255) 92.2%);
     z-index: -1;
 }
 /* Navbar & Footer */
@@ -119,6 +123,24 @@ footer {
         -ms-flex-align: center;
             align-items: center;
 }
+
+.card {
+    max-width: 19rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    border: none;
+}
+
+#back-to-top {
+    background-color: rgba(178, 103, 94, 0.7);
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10vh;
+    right: 10px;
+    cursor: pointer;
+}
+
 
 .remove-item {
     cursor: pointer;
