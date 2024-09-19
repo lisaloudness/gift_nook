@@ -1,114 +1,141 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Gift Nook**
+![Gift Nook website in various devices](readme-testing-files/readme/main-image.png "Gift Nook website in various devices")  
 
-Welcome lisa jones,
+[View the live website here](https://gift-nook-cae3a727fe6e.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+</br>  
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 28, 2024**
+Welcome to the Gift Nook website!
+Gift Nook is an e-commerce website that sells bespoke gifts (handmade and personalised). It features an authentication functionality powered by Allauth and a payment functionality powered by Stripe.  These allow users to purchase products safely and securely via the website.  
 
-## Gitpod Reminders
+Please note that this website is created for Milestone Project 4 in Code Institute's Diploma in Full Stack Software Development. The requirements are to produce a full-stack website, using HTML, CSS, JavaScript, Django+Python, relational database, stripe payments, and other additional libraries as needed. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<br/>  
 
-`python3 -m http.server`
+## **Table of Contents** 
+---------
 
-A blue button should appear to click: _Make Public_,
+<br/>  
 
-Another blue button should appear to click: _Open Browser_.
+## **UX DEVELOPMENT PLANE**   
+### **A. Strategy Plane**  
+#### **Project Goals**   
+The primary goal of this project is to create an e-commerce website that a fully-functioning e-commerce platform that is visually pleasing and intuative to a first-time user. The website has basic functionalities that are expected in an e-commerce website (such as sign up/login, ability to purchase items, and payments transactions), but also to ensure that users have a great experience and interaction within the site through additional functionalities such as writing product reviews and reading blogs.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+#### **User Goals**  
+The user is looking for:
+- An online store/ website that is straightforward and intuitive to use, easy to navigate whilst purchasing products. 
+- An online store/ website which has additional activities and engagement whilst browsing prodcuts.  
 
-A blue button should appear to click: _Make Public_,
+The target user for this site is:
+- Young adults, between 18 - 40
+- Thoughful, sentimental people
+- People who enjoy the convenience of using technology and social media
 
-Another blue button should appear to click: _Open Browser_.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### **Site Owner Goals**  
+The site owner is looking to:
+- Make money by providing products (and services) to the users. 
+- Manage products on the website.
 
-To log into the Heroku toolbelt CLI:
+#### **User Stories** 
+As a shopper I want to be able to:  
+   1. Quickly identify what products/services the site sells.  
+   2. Quickly identify shipping costs.   
+   3. Search for a product.   
+   4. Identify a glimpse of the most popular products.   
+   5. View all products, and easily navigate between categories.  
+   6. Sort products by price.  
+   7. View the individual product's page and read the relevant information.  
+   8. Read a product's review.  
+   9. Easily add products to a shopping bag.
+   10. View the shopping bag with products added to it.  
+   11. Manage the shopping bag by removing unwanted products.  
+   12. Check out and easily enter my payment information.  
+   13. Feel my personal and payment information is safe and secure.  
+   14. View an order confirmation after purchasing.  
+   15. Receive an email confirmation after purchase.  
+   16. Read relevant articles/ blogs.   
+   17. Easily navigate within the site, through Navigation Bar and Footer.  
+   18. Easily register for an account.  
+   19. Find the FAQ section for my questions.  
+   20. Contact the shop via a contact form.     
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+As a registered user/ shopper, I want to be able to:
+   1. Access all functionalities that an unregistered shopper can do.  
+   2. Easily log in or log out.   
+   3. Easily recover my password if forgotten.  
+   4. Receive an email confirmation after registering.  
+   5. Have a personalized user profile where I can see my order history and change my information.  
+   6. Review products that I have purchased before.  
+   7. Edit and delete my reviews.  
+   8. Add products to the wishlist, so I can quickly find products I'd like to purchase. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   9. Remove products from the wishlist, so I can remove products I don't wish to purchase.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   10. Easily put the wishlist products into the shopping bag.   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+As an admin and store management, I want to be able to:
+   1. Add a product.  
+   2. Edit or update a product.  
+   3. Delete a product.  
 
-------
+[Back to top &uarr;](https://github.com/lisaloudness/gift_nook)  
 
-## Release History
+<br/>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### **B. Scope Plane**  
+Based on all goals and user stories, a scope was defined for the site with room for future improvements.  
 
-**May 28 2024:** Fix Mongo and Links installs
+#### **Functional Requirements**   
+The unregistered users will be able to:  
+- Sign up to the site by providing the username, email, and password.    
+- View all products and sort them by price.  
+- Search for products.  
+- View the product's detail.  
+- Add products to the shopping bag.  
+- Update and remove items in the shopping bag.  
+- Checkout and make a payment.  
+- Receive an email confirmation of the transaction.    
 
-**April 26 2024:** Update node version to 16
+The registered users will be able to:  
+- Do all things that unregistered users are able to do.   
+- Log in to the site by providing a username and password.  
+- View the profile page.  
+- Update delivery/contact information on their profile page.  
+- View order history on their profile page.  
+- Write reviews for products that they have purchased.  
+- Edit those reviews.  
+- Delete those reviews.  
+- Add products to their wishlist.  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+- Remove products from the wishlist.  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 
-**September 20 2023:** Update Python version to 3.9.17.
+The admin/ site owners will be able to:
+- Have all functionalities as a registered user.  
+- Add a product to the site.  
+- Edit or update a product.  
+- Delete a product.  
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### **Non-functional Requirements**  
+Users will be able to:  
+- View articles/ blogs about gifts and occasions.  
+- View the FAQ page to find answers to their questions.  
+- Send a message to the store via contact form.  
+- Navigate easily and intuitively throughout the site.  
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+<br/>  
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### **C. Structure Plane**  
+The website was organized in a Hierarchical Tree Structure that ensures the user can navigate easily and intuitively. Below is the website workflow (which was designed using [Creately](https://creately.com/)).  
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![The website's structure](readme-testing-files/readme/structure.png "The website's structure")   
+There's a clear page access separation between unregistered users and registered users. While unregistered users can still purchase products and receive the confirmation via email, they are not able to:  
+- View their order history  
+- Give reviews (and edit or delete their reviews accordingly)  
+- Make a favorite list of products.  XXXXXXXXXXXXXXXXXXXXX
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Those features mentioned are available for registered users.  
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Back to top &uarr;](https://github.com/lisaloudness/gift_nook)  
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<br/>  
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!

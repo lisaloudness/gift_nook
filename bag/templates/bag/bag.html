@@ -50,8 +50,9 @@
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove Item</small></a>
+                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}
+                                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-bs-toggle="tooltip" title="Remove Gift"><small><i class="fa-regular fa-trash-can"></i></small></a>
+                                        </p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -125,6 +126,11 @@
                  location.reload();
              });
         })
+        // Initialize all tooltips on the page
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
     </script>
 
 {% endblock %} 
