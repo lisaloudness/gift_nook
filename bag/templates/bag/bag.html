@@ -51,7 +51,7 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}
-                                        <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-bs-toggle="tooltip" title="Remove Gift"><small><i class="fa-regular fa-trash-can"></i></small></a>
+                                        <a class="remove-item text-black" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-bs-toggle="tooltip" title="Remove Gift"><small><i class="fa-regular fa-trash-can"></i></small></a>
                                         </p>
                                     </td>
                                 </tr>
@@ -74,8 +74,8 @@
                                 <h6><strong>${{ grand_total|floatformat:2 }}</strong></h6>
                             </div>
                             {% if free_delivery_delta > 0 %}
-                                <p class="mb-1 text-danger">
-                                    You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                <p class="mb-1 text-black">
+                                    Spend an extra <strong>${{ free_delivery_delta }}</strong> to get free delivery!
                                 </p>
                             {% endif %}
                             <div class="text-center mt-3">
@@ -88,6 +88,8 @@
                             </div>
                             <div class="mt-5">
                                 <p>We accept</p>
+                                <img class="img-creditcard" src="{{ MEDIA_URL }}cards-logo.png" 
+                                    alt="Visa, Master Cards, American Express, and Discover">
                             </div>
                         </div>
                         <div class="my-5 text-end">

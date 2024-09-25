@@ -38,11 +38,13 @@
           {{ form|crispy }}
           </p>
         </div>
+        <div class="mb-3">
         <!-- Cancel Adding Product Review Button -->
-        <a class="btn cart-shopping-button rounded-0" href="{% url 'products' %}">Cancel</a>
+        <a class="btn btn-light cart-shopping-button rounded-0 " href="{% url 'products' %}">Cancel</a>
         <!-- Submit Review button -->
-        <button class="btn cart-shopping-button rounded-0" type="submit"><i class="fas fa-envelope"></i> Submit
+        <button class="btn btn-purple cart-shopping-button rounded-0" type="submit"><i class="fas fa-envelope"></i> Submit
           Review</button>
+        </div>
       </form>
     </div>
   </div>
