@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background: url('/media/gift.jpg') no-repeat center center fixed;
+    background: url('/media/gift.jpg') no-repeat center center;
     background-size: cover;
     height: calc(100vh - 180px);
     color: #555;
@@ -57,15 +57,29 @@ body {
     color: white;
 }
 
+.btn-review {
+    background: rgba(178, 94, 146, 0.7);
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-purple:hover,
+.btn-purple:active,
+.btn-purple:focus {
+    background: rgb(185, 61, 156);
+    color: white; 
+}
+
 .btn-outline-black {
     background: white;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+
+
+
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -100,7 +114,11 @@ body {
 footer a:hover,
 footer a:active,
 footer a:focus {
-    color: #f77bb7;
+    color: #7a413b;
+}
+
+.navbar {
+    padding: 0px;
 }
 
 footer {
@@ -116,12 +134,12 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: right;
+    -ms-flex-pack: right;
+    justify-content: right;
+    -webkit-box-align: right;
+    -ms-flex-align: right;
+    align-items: right;
 }
 
 .card {
