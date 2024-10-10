@@ -4,8 +4,9 @@ html {
 }
 
 body {
-    background: url('/media/gift.jpg') no-repeat center center;
+    background: url('/media/gift.jpg') no-repeat center center fixed;
     background-size: cover;
+    
     height: calc(100vh - 180px);
     color: #555;
     font-family: "Poppins";
@@ -285,7 +286,7 @@ img {
     .container {
       max-width: 80%;
     }
-  }
+  
   
   /* Allauth form formatting */
   .allauth-form-inner-content p {
@@ -366,7 +367,7 @@ img {
       border-color: #dc3545;
       border-radius: 0;
   }
-  
+} 
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -411,7 +412,7 @@ img {
         font-size: 1rem;
     }
 
-    #delivery-banner h4 {
+    .h6.logo-font.my-1 {
         font-size: .9rem;
     }
 
