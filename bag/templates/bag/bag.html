@@ -24,8 +24,8 @@
                                 <tr>
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
+                                    <th scope="col" id="price-sm">Price</th>
+                                    <th scope="col text-center">Qty</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
@@ -43,7 +43,7 @@
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-3" id="price-sm">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25 text-center">
