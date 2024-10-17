@@ -142,7 +142,9 @@ Wireframes were created using [Balsamiq](https://www.balsamiq.com) to design the
 
 - [Wireframe for Home page](media/readme/home.png) 
 - [Wireframe for Products page](media/reademe/all_product_search.png)  
-- [Wireframe for Individual Product page](media/readme/Product_detail.png)  
+- [Wireframe for Individual Product page](media/readme/Product_detail.png)
+- [Wireframe for FAQ page](media/readme/faq.png)
+- [Wireframe for Sign Up page](media/readme/signup.png)
 
 #### **Color Scheme**  
 The overall color theme of the website was natural earthy colors, which have relaxed and comforting influences and encourage feelings of warmth and calmness. Using [Coolors](https://coolors.co), I started with pink (RGB 235, 150, 209) and purple (RGB 180, 10, 140) , and generated two more colors that compliment them both - the results were a mulberry (RGB 178, 94, 146) & magenta (RGB 192, 101, 165) . I also found a hero image that fits the overall theme and colors accordingly [Hero Image](media/gift.jpg "Hero image").   

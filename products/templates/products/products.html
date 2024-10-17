@@ -75,6 +75,7 @@
                                                             <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                                                             <a href="#" class="btn-delete text-danger" data-product-id="{{ product.id }}">Delete</a>
                                                         </small>
+                                                        <!-- Confirmation modal before deleting the product -->
                                                         <div class="modal fade" id="deleteModal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel-{{ product.id }}" aria-hidden="true">
                                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                                 <div class="modal-content">
