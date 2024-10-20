@@ -3,136 +3,131 @@
 {% load bagtools %}
 
 {% block page_header %}
-    <div class="navbar-offset"></div>
+<div class="navbar-offset"></div>
 {% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col text-center">
-                    <h2 class="my-5 fw-bold">Shopping Bag</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="my-5 fw-bold">Shopping Bag</h2>
+        </div>
+    </div>
+    {% if bag_items %}
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="table-responsive rounded"></div>
+            <table class="table table-sm table-borderless">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col">Product Info</th>
+                        <th scope="col"></th>
+                        <th scope="col" id="price-sm">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                {% for item in bag_items %}
+                <tr>
+                    <!-- Product's image -->
+                    <td class="py-3 w-25">
+                        {% if item.product.image %}
+                        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                    </td>
+                    <td class="py-3" id="price-sm">
+                        <p class="my-0">${{ item.product.price }}</p>
+                    </td>
+                    <td class="py-3 w-25">
+                        <p class="my-0">{{ item.quantity }}</p>
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}
+                            <a class="remove-item text-black" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-bs-toggle="tooltip" title="Remove Gift"><small><i class="fa-regular fa-trash-can"></i></small></a>
+                        </p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-12 col-lg-4 mt-5 ps-5">
+            <div class="border bg-black p-4">
+                <div class="d-flex justify-content-between">
+                    <h6>Bag Total: </h6>
+                    <h6>${{ total|floatformat:2 }}</h6>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h6>Delivery: </h6>
+                    <h6>${{ delivery|floatformat:2 }}</h6>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <h6><strong>Grand Total: </strong></h6>
+                    <h6><strong>${{ grand_total|floatformat:2 }}</strong></h6>
+                </div>
+                {% if free_delivery_delta > 0 %}
+                <p class="mb-1 text-black">
+                    Spend an extra <strong>${{ free_delivery_delta }}</strong> to get free delivery!
+                </p>
+                {% endif %}
+                <div class="text-center mt-3">
+                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                    <i class="fas fa-lock"></i>
+                    </span>
+                    </a>
+                </div>
+                <div class="mt-5">
+                    <p>We accept</p>
+                    <img class="img-creditcard" src="{{ MEDIA_URL }}cards-logo.png" 
+                        alt="Visa, Master Cards, American Express, and Discover">
                 </div>
             </div>
-            {% if bag_items %}
-                <div class="row">
-                    <div class="col-12 col-lg-8">
-                        <div class="table-responsive rounded"></div>
-                        <table class="table table-sm table-borderless">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col" id="price-sm">Price</th>
-                                    <th scope="col text-center">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for item in bag_items %}
-                                <tr>
-                                    <!-- Product's image -->
-                                    <td class="py-3 w-25">
-                                        {% if item.product.image %}
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                        {% else %}
-                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    </td>
-                                    <td class="py-3" id="price-sm">
-                                        <p class="my-0">${{ item.product.price }}</p>
-                                    </td>
-                                    <td class="py-3 w-25 text-center">
-                                        <p class="my-0">{{ item.quantity }}</p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}
-                                        <a class="remove-item text-black" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-bs-toggle="tooltip" title="Remove Gift"><small><i class="fa-regular fa-trash-can"></i></small></a>
-                                        </p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                    <div class="col-12 col-lg-4 mt-5 ps-5">
-                        <div class="border bg-black p-4">
-                            <div class="d-flex justify-content-between">
-                                <h6>Bag Total: </h6>
-                                <h6>${{ total|floatformat:2 }}</h6>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <h6>Delivery: </h6>
-                                <h6>${{ delivery|floatformat:2 }}</h6>
-                            </div>
-                            <hr>
-                            <div class="d-flex justify-content-between">
-                                <h6><strong>Grand Total: </strong></h6>
-                                <h6><strong>${{ grand_total|floatformat:2 }}</strong></h6>
-                            </div>
-                            {% if free_delivery_delta > 0 %}
-                                <p class="mb-1 text-black">
-                                    Spend an extra <strong>${{ free_delivery_delta }}</strong> to get free delivery!
-                                </p>
-                            {% endif %}
-                            <div class="text-center mt-3">
-                                <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="mt-5">
-                                <p>We accept</p>
-                                <img class="img-creditcard" src="{{ MEDIA_URL }}cards-logo.png" 
-                                    alt="Visa, Master Cards, American Express, and Discover">
-                            </div>
-                        </div>
-                        <div class="my-5 text-end">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            {% else %}
-                <p class="lead text-center mb-5">Your bag is empty.</p>
+            <div class="my-5 text-end">
                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
+                <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
                 </a>
-            {% endif %}
+            </div>
         </div>
+    </div>
+    {% else %}
+    <p class="lead text-center mb-5">Your bag is empty.</p>
+    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+    <span class="icon">
+    <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Keep Shopping</span>
+    </a>
+    {% endif %}
+</div>
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
     
-
-    <script type="text/javascript">
-        // Remove item and reload on click
-        $('.remove-item').click(function(e) {
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr('id').split('remove_')[1];
-            var size = $(this).data('size');
-            var url = `/bag/remove/${itemId}/`;
-            var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
-    
-            $.post(url, data)
-             .done(function() {
-                 location.reload();
-             });
-        })
-        // Initialize all tooltips on the page
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+    // Initialize all tooltips on the page
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+    return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    </script>
-
-{% endblock %} 
+</script>
+{% endblock %}

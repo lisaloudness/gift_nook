@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} About Us Page{% endblock %}
+
+{% block page_header %}
+    <div class="navbar-offset"></div>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                
+            </div>
+            <div class="mt-1 mt-md-3">
+                <div class="my-4">
+                    
+                    <img src="/media/impact.png" class="img-fluid" alt="Responsive image">
+                    <h5 class="fw-bold"></h5>
+                        <strong>Our Impact</strong>
+                    </h5>
+                    <p>
+                        Here at Gift Nook, we are always working towards our operations having a positive and meaningful impact on the world around us. Guided by this principle, we actively collaborate with local resources to uphold our commitment to sustainability, social responsibility, and ethical business practices. We align ourselves with like-minded partners, utilising resources responsibly and through continuous collaboration and innovation, we aim to set responsible business practices towards a brighter future.
+                    </p>
+                    
+                </div>
+                
+                <div class="text-center">
+                <a href="{% url 'products' %}" class="btn btn-purple my-5">
+                    Browse Our Store
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

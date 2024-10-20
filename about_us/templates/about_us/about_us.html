@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} About Us Page{% endblock %}
+
+{% block page_header %}
+    <div class="navbar-offset"></div>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 class="mt-5 mb-4 mb-sm-5 fw-bold text-uppercase">
+                        The Gift Nook Story
+                    </h2>
+                </div>
+            </div>
+            <div class="mt-1 mt-md-3">
+                <div class="my-4">
+                    <h5 class="fw-bold">
+                        <strong>Our History</strong>
+                    </h5>
+                    
+                    <p>
+                        Our story began in 2004 when Lisa decided to follow her passion and creativity, saying farewell to her job as an engineer in Public Service Broadcasting and returned home to Cardiff. To fund her dream, Lisa sold her car and designed her first range of unique jewellery to showcase at local craft markets.
+                    </p>
+                    <p>
+                       5 years later, Gift Nook has a growing reputation. We have a shop on Cardiff Hight Street whilst still maintaining our online store. We are proudly independent and remain focussed on the core values that inspired Lisa to set up the business over 5 years ago.&nbsp;
+                    </p>
+                    <img src="/media/lisa_shop.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="my-4">
+                    <h5 class="fw-bold">
+                        <strong>Our Values</strong>
+                    </h5>
+                    <p>
+                        The Gift Nook core values are positivity, creativity and care, and we work to ensure these are reflected in everything we do. We are dedicated to designing and sourcing unique and beautiful jewellery, gifts and accessories, all at affordable prices. We pride ourselves on selling exceptionally high-quality pieces that inspire you and bring a little joy.
+                    </p>
+                </div>
+                            <div class="text-center">
+                <a href="{% url 'products' %}" class="btn btn-purple my-5">
+                    Browse Our Store
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

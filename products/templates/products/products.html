@@ -2,181 +2,172 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-                
-            </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
         </div>
     </div>
-
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class = "overlay"></div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col text-enter mt-3">
-                    <h2 class="logo-font">Products</h2>
-                    <hr class="w-50 mb-1">
+<div class = "overlay"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-enter mt-3">
+            <h2 class="logo-font">Products</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="product-container col-10 offset-1">
+            <div class="row mt-1 mb-2">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                    <div class="sort-select-wrapper w-50">
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 order-md-first">
+                    <p class="text-muted mt-3 text-center text-md-left">
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                    </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="product-container col-10 offset-1">
-                    <div class="row mt-1 mb-2">
-                        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                            <div class="sort-select-wrapper w-50">
-                                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                </select>
-                            </div>
+            <div class="row mt-1 mb-2">
+                {% for product in products %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="card mx-auto">
+                        <div>
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
                         </div>
-                        <div class="col-12 col-md-6 order-md-first">
-                            <p class="text-muted mt-3 text-center text-md-left">
-                                {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                    <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
-                                {% endif %}
-                                {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                            </p>
+                        <div class="card-body pb-0">
+                            <p class="mb-0">{{ product.name }}</p>
                         </div>
-                    </div>
-                    <div class="row mt-1 mb-2">
-                        
-                            {% for product in products %}
-                            <div class="col-sm-6 col-md-4">
-                                <div class="card mx-auto">
-                                    <div>
-                                        {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </a>
-                                        {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                        </a>
-                                        {% endif %}
-                                    </div>
-                                        <div class="card-body pb-0">
-                                            <p class="mb-0">{{ product.name }}</p>
-                                        </div>
-                                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                                    {% if product.rating %}
-                                                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                                    {% else %}
-                                                        <small class="text-muted">No Rating</small>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                    {% if product.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a href="#" class="btn-delete text-danger" data-product-id="{{ product.id }}">Delete</a>
+                                    </small>
+                                    <!-- Confirmation modal before deleting the product -->
+                                    <div class="modal fade" id="deleteModal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel-{{ product.id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel-{{ product.id }}">Confirm Deletion</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you sure you want to delete the product: <strong>{{ product.name }}</strong>?</p>
+                                                    {% if product.image %}
+                                                    <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
                                                     {% endif %}
-                                                    {% if request.user.is_superuser %}
-                                                        <small class="ml-3">
-                                                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                            <a href="#" class="btn-delete text-danger" data-product-id="{{ product.id }}">Delete</a>
-                                                        </small>
-                                                        <!-- Confirmation modal before deleting the product -->
-                                                        <div class="modal fade" id="deleteModal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel-{{ product.id }}" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="deleteModalLabel-{{ product.id }}">Confirm Deletion</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <p>Are you sure you want to delete the product: <strong>{{ product.name }}</strong>?</p>
-                                                                        {% if product.image %}
-                                                                            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
-                                                                        {% endif %}
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <form action="{% url 'delete_product' product.id %}" method="post">
-                                                                            {% csrf_token %}
-                                                                            <button type="submit" class="btn btn-purple">Yes, Delete</button>
-                                                                        </form>
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    {% endif %}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="{% url 'delete_product' product.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="btn btn-purple">Yes, Delete</button>
+                                                    </form>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                                 </div>
                                             </div>
                                         </div>
-                                    
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
-                            {% if forloop.counter|divisibleby:1 %}
-                                <div class="col-12 d-sm-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}                        
-                            {% if forloop.counter|divisibleby:2 %}
-                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:3 %}
-                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:4 %}
-                                <div class="col-12 d-none d-xl-block mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        
+                        </div>
                     </div>
                 </div>
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}                        
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-        <!-- Back to top button -->
-        <a class="btn btn-purple btn-outline-dark text-center ml-auto" id="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
-    
-
-    {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
-
-    <script type="text/javascript">
-        // jQuery to trigger the modal when the delete button is clicked
-        $('.btn-delete').on('click', function(e) {
-            e.preventDefault(); // Prevent the default link action
-            var productId = $(this).data('product-id'); // Get the product ID from the data attribute
-            $('#deleteModal-' + productId).modal('show'); // Show the corresponding modal
-        });
-    </script>
-    
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
-
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
-
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
-
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
-
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+    </div>
+</div>
+<!-- Back to top button -->
+<a class="btn btn-purple btn-outline-dark text-center ml-auto" id="back-to-top" href="#"><i class="fas fa-arrow-up"></i></a>
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+    	window.scrollTo(0,0)
+    })
+</script>
+<script type="text/javascript">
+    // jQuery to trigger the modal when the delete button is clicked
+    $('.btn-delete').on('click', function(e) {
+        e.preventDefault(); // Prevent the default link action
+        var productId = $(this).data('product-id'); // Get the product ID from the data attribute
+        $('#deleteModal-' + productId).modal('show'); // Show the corresponding modal
+    });
+</script>
+<script type="text/javascript">
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+    
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+    
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+    
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+    
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}
