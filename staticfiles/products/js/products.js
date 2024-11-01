@@ -9,6 +9,12 @@ $('.btn-delete').on('click', function(e) {
     $('#deleteModal-' + productId).modal('show'); // Show the corresponding modal
 });
 
+// jQuery to trigger the modal when the delete button is clicked
+$('.btn-delete').on('click', function(e) {
+    e.preventDefault(); // Prevent the default link action
+    var productId = $(this).data('product-id'); // Get the product ID from the data attribute
+    $('#deleteModal-' + productId).modal('show'); // Show the corresponding modal
+});
 
 $('#sort-selector').change(function() {
     var selector = $(this);

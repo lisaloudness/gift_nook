@@ -26,7 +26,7 @@
             </div>
             <div class="row mb-5">
                 <!-- Image -->
-                <div class="col-12 col-lg-12">
+                <div class="col-12 col-lg-12 p-2">
                     {% if blog.image %}
                         <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="w-100">
                     {% else %}
@@ -51,7 +51,7 @@
             </div>
             <!-- Back to Articles page button -->
             <div class="d-flex justify-content-center mb-5 pb-4">
-                <a href="{% url 'all_articles' %}" role="button" class="btn bg-pink">
+                <a href="{% url 'all_articles' %}" role="button" class="btn bg-pink text-white">
                     Read More Articles
                 </a>
             </div>

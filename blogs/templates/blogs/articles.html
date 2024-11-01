@@ -19,7 +19,7 @@
                 <!-- Display all articles in cards layout -->
                 {% for blog in blogs %}
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-4 d-flex justify-content-center">
-                    <div class="card">
+                    <div class="card p-1">
                         {% if blog.image %}
                             <a href="{% url 'article_detail' blog.id %}">
                                 <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
@@ -41,7 +41,7 @@
                 {% endfor %}
             </div>
             <div class="d-flex justify-content-center mb-5">
-                <a href="{% url 'home' %}" class="btn bg-pink" role="button">Back to Homepage</a>
+                <a href="{% url 'home' %}" class="btn bg-pink text-white" role="button">Back to Homepage</a>
             </div>
         </div>
     </section>
