@@ -1,5 +1,5 @@
 # **Gift Nook**
-![Gift Nook website in various devices](media/readme/main-image.png "Gift Nook website in various devices")  
+![Gift Nook website in various devices](media/readme/responsive.png "Gift Nook website in various devices")  
 
 [View the live website here](https://gift-nook-cae3a727fe6e.herokuapp.com/)
 
@@ -126,7 +126,7 @@ Users will be able to:
 ### **C. Structure Plane**  
 The website was organized in a Hierarchical Tree Structure that ensures the user can navigate easily and intuitively. Below is the website workflow (which was designed using [Creately](https://creately.com/)).  
 
-![The website's structure](media/readme/structure.jpg "The website's structure")   
+![The website's structure](media/readme/structure.png "The website's structure")   
 There's a clear page access separation between unregistered users and registered users. While unregistered users can still purchase products and receive the confirmation via email, they are not able to:  
 - View their order history  
 - Give reviews (and edit or delete their reviews accordingly)
@@ -273,7 +273,7 @@ The database schema was designed using [dbdiagram.io](https://dbdiagram.io/home)
 - **Fully responsive** - Each page of the site is fully responsive on all device sizes (with a minimum dimension of 320px or an iPhone 4/5) and features intuitive navigational buttons.  
 
 - **Navbar** (on all pages)   
-   ![The Navbar on desktop](XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"The Navbar on desktop")   
+   ![The Navbar on desktop](media/readme/nav_desktop.png "The Navbar on desktop")   
 
    - The Navbar is responsive and turns to a hamburger menu on a smaller device. It is also sticky, thus it follows along when the user scrolls down, so the user can easily navigate the site without scrolling back to the top.  
    - The logo is placed at the top left of the Navbar and links back to the Home page.  
@@ -284,47 +284,44 @@ The database schema was designed using [dbdiagram.io](https://dbdiagram.io/home)
    - A sales banner about free delivery is placed right below the Navbar and also displayed on all pages.  
 
 - **Footer** (on all pages)  
-   ![The Footer on desktop](XXXXXXXXXXXXXXXXXXXXXXXXXXXX "The Footer on desktop") 
+   ![The Footer on desktop](media/readme/footer_desktop.png "The Footer on desktop") 
    The Footer is a bold contrast to the Navbar and provides all navigation links, the social media links of the store as well (that opens in a new tab), and the logo that leads back to the Home page. Here we also have links to the Articles, the FAQ page, and the Contact page. Although these three pages are important, they are not the main pages of the site.  Therefore the links to these pages are only available on the footer, which can be found at the bottom of every page nevertheless.  
 
 - **Toast message**   
 Toast messages provide the user the necessary feedback on their activities whether it's successfully executed or not. The toast messages are color-coded: red for error messages, blue for info/ alert messages, yellow for warning messages, and green for success messages. Users will get a success toast the most, for example when users add a product to the shopping bag, they will get a success toast message with a bag display. When users for example add a product to their favorites list, they will get a success toast message without a bag display. Below are the examples of success toast messages (without the bag and with the bag display).   
-![Success toast message - without bag display](XXXXXXXXXXX "Success toast message - without bag display")
-![Success toast message - with bag display](XXXXXXXXXX "Success toast message - with bag display")   
+![Success toast message - without bag display](media/readme/toast_success.png "Success toast message - without bag display")
+![Success toast message - with bag display](media/readme/toast_bag.png "Success toast message - with bag display")   
 
 - **Error Pages**  
-Error pages for 403, 404, and 500 errors were created to ensure a great user experience even when the user encounters an error. Users can be informed of the error and can easily navigate back to the homepage.   
+Error pages for 403, 404, and 500 errors were created to ensure a great user experience even when the user encounters an error. Users can be informed of the error and can easily navigate back to the homepage.
+![Customised 403 Error Page](static/images/403.png "Customised 403 Error Page")
+![Customised 404 Error Page](static/images/404.png "Customised 404 Error Page")
+![Customised 500 Error Page](static/images/500.png "Customised 500 Error Page")
 
 
 ### **B. Page Features**  
 #### **1. Home Page**  
-[See the image of the Homepage here](XXXXXXXXXXXX)   
-- On the Home page, I used multiple images as a marketing strategy to attract users' attention to browse more into the website, and hopefully make a purchase.  
+[See the image of the Homepage here](media/readme/home_mob.png)  
 - The hero-image covers 100% of the viewport height and width, with an impactful heading to give the user a great first impression. 
 - Users are prompted to click the "Shop Now" button to enter the platform.
 #### **2. Products Page**  
-[See the image of Products page here](XXXXXXXXX)     
+[See the image of Products page here](media/readme/products_mob.png)     
 - The result of products displayed can also be sorted by price (lowest to highest and highest to lowest)..  
-- The products are displayed in 4 columns on a large screen, 3 columns on a medium screen, and 2 columns on a small screen.   
+- The products are displayed in 4 columns on a large screen, 3 columns on a medium screen, and 1 columns on a small screen.   
 - A back-to-top button is fixed positioned on the right side of the screen.  
 
 #### **3. Individual Product Page**  
-[See the image of Individual Product page here](XXXXXXXXXXX)  
+[See the image of Individual Product page here](media/readme/productdetail_mob.png)  
   
-- The page features the product's image, name, price, rating, category tag, and reviews at the bottom of the page.  
-- On the top right of the product's image, there's a heart icon that turns red when the user hovers over it. By clicking this icon, a registered user can add the product to their favorites list. The heart icon will then turns red to indicate that the product has been listed in the user's favorites.  
-- Users can add the product to their shopping bag by choosing the size and the quantity, and then click Add to Bag button.  
-
-**Review Section** 
-- Under the product information, there's a review section that lists all the reviews for the product. If a user has written a review for the product before, the buttons to edit and delete show up below it. A registered user is able to edit or delete their own review.   
-   Below is the example, if I logged in as user "Janedoe".   
-   ![Edit and Delete Review buttons](media/readme/review-edit-delete-button.png "Edit and Delete Review buttons")    
-   If the user clicks the Edit button, they will be directed to the Edit Review page [see Edit Review page](https://gift-nook-cae3a727fe6e.herokuapp.com/reviews/edit_review/).   
-   While if the user clicks the Delete button, a confirmation modal will pop out to confirm if the user really wants to delete it.    
-   ![Confirmation modal before deleting review](media/readme/delete-review-modal.png "Confirmation modal before deleting review")  
+- The page features the product's image, name, price, description and reviews at the bottom of the page.  
+- On the bottom of the page users can read a detailed description of the product and read any reviews. Registered users can also leave reviews here too.
+- Users can add the product to their shopping bag by choosing the quantity and then click Add to Bag button.
+- Under the product information, there's a review section that lists all the reviews for the product. If a user has written a review for the product before, the option to edit will appear below. A registered user is able to edit or delete their own review.   
+[See the image of Review here](media/readme/read_review.png)
+   
 
 #### **4. Bag Page**  
-[See the image of Bag page here](media/readme/bag-page.png)  
+[See the image of Bag page here](media/readme/bag_page.png)  
 - The Bag page features all products that the user has been added to the shopping bag, and the total price that the user has to pay (if the user decides to continue).  
 - It displays the products' information such as product's image, name, price and quantity of choice.  
 - A trash icon is placed on each product's row, which indicates that users can use this button to remove the specified product from their bag.  
@@ -333,78 +330,68 @@ Error pages for 403, 404, and 500 errors were created to ensure a great user exp
 - If the user decides to browse for more products, a Keep Shopping button is positioned below the total box as a secondary option.   
 
 #### **5. Checkout Page**  
-[See the image of Checkout page here](media/readme/checkout-page.png)  
+[See the image of Checkout page here](media/readme/checkout_mob.png)  
 - The Checkout page features the checkout form to process the transaction and the order information.  
 - The Checkout form is divided into 3 sections: Details (user's full name and email), Delivery (user's delivery address), and Payment (user's card detail).  
 - The order information is filled with a summary of all products from the Bag page, along with the total. CTA buttons are present inside the box for the user to pay and therefore complete the order, or go back to Adjust bag as a secondary option.  
 
 #### **6. Checkout Success Page**   
-[See the image of Checkout Sucess page here](media/readme/checkout-success-page.png)  
+[See the image of Checkout Sucess page here](media/readme/checkout_success.png)  
 - The Checkout Success page features the summary of order transactions that had just been successfully processed, right after the user proceeds to complete the order on the Checkout page.  
 - Users can see the Order information, items list, delivery address, and billing information.
 - Registered users can also find this summary of orders on their Profile page.  
 
-#### **7. Profile Page - My Information**  
-[See the image of Profile page - My Information here](media/readme/profile-information-page.png)  
-- The Profile page features three pill sections - My Information, My Purchases, and Ratings/ Reviews.  
-- In the My Information section, users can update their delivery information. This information will pre-populate the Checkout form for future transactions so that registered users don't have to fill it out all over again. They just have to fill in the payment information.   
-- By changing the input fields and clicking the Update Information button, the delivery information is updated in the database.  
-
-#### **8. Profile Page - My Purchases**  
-[See the image of Profile page - My Purchases here](media/readme/profile-orderhistory-page.png)  
-- On My Purchases section, users can view all their order history, sorted by order date (from the earliest to the latest).  
+#### **7. Profile Page**  
+[See the image of Profile page - My Information here](media/readme/profile_mob.png)  
+- The Profile page features two pill sections - Delivery info and Purchase history.
+- In the delivery section, users can update their delivery information. This information will pre-populate the Checkout form for future transactions so that registered users don't have to fill it out all over again. They just have to fill in the payment information.   
+- By changing the input fields and clicking the Update Information button, the delivery information is updated in the database.
+- Users can view all their order history, sorted by order date (from the earliest to the latest).  
 - Each order number can be clicked, and it will lead to the Checkout Success page of the order, so that user can see the detail information of that particular order.  
 
-
-#### **9. Profile Page - Ratings/Reviews**  
-[See the image of Profile page - Ratings/Reviews here](media/readme/profile-reviews-page.png)  
-- In the Ratings/ Reviews section, users can view all products that they have purchased before and are waiting to be reviewed. Users can only review products that they have purchased before so that they can give trustworthy reviews of the products.  
-- Users can give ratings and reviews by clicking the Give Review button on the right side of the product. They will then be directed to the Add Review page.   
-- After the review for a product is added, the product will be removed from this section.  
-
-#### **10. Add/ Edit Review Page**  
-[See the image of Add/ Edit Review page here](media/readme/add-edit-review-page.png)  
-- The Add Review page features a form to submit reviews for the specified product. 
+#### **8. Add/ Edit Review Page**  
+[See the image of Add/ Edit Review page here](media/readme/leave_review.png)  
+- The Add Review page features a form to submit reviews for a specified product. 
 - To submit the rating and review, a Submit Review button is placed below the form. There's also a Cancel button which will bring users back to their profile (review section).  
 - After the review is submitted, users are directed back to their profile (review section) as well, to encourage users to review more products.  
 - Even though there are two separate templates each for Add Review page and Edit Review page, the display and layout are exactly the same between the two. The only difference is, on the Edit Review page, the rating input and review text area are already prepopulated with the existing rating and review from the user.  
 - As mentioned above on the Individual Product page, user can edit their review by accessing the Individual Product page first, finding the review, and then clicking the Edit button.  
 
 #### **11. Articles Page**  
-[See the image of Articles page here](media/readme/articles-page.png)  
+[See the image of Articles page here](media/readme/articles_mob.png)  
 - The Articles page features all relevant articles or blogs about gifts and occasions. This provides better customer experiences besides basic purchasing functionality and hopefully will increase users' engagement with the store.   
 - All articles are featured in a card-like display, with an image, a title, a small part of the article, and a Read the article link that will bring the user to the Individual Article page.   
 
 #### **12. Individual Article Page**  
-[See the image of Articles page here](media/readme/individual-article-page.png)  
+[See the image of Articles page here](media/readme/article.png)  
 - The Individual Article page features the article itself, the image, the title, and the date created.   
 - Read more articles button is placed on the bottom-center of the page to bring users back to the Articles page.  
 
 #### **13. FAQ Page**  
-[See the image of FAQ page here](media/readme/faq-page.png)  
+[See the image of FAQ page here](media/readme/faq_mob.png)  
 - The FAQ page features frequently asked questions about payment, order, return policy, etc. Users can access this page by clicking the FAQ link on the footer.  
 - If users can't find their answers on this page, they are invited to contact the store directly by clicking the Go to Contact Page button placed on the bottom-center of the page.  
 
 #### **14. Contact Page**  
-[See the image of Contact page here](media/readme/contact-page.png)  
-- The Contact Page features information on how to contact the store. It provides a phone number, email address, and a contact form.  
+[See the image of Contact page here](media/readme/contact_mob.png)  
+- The Contact Page features information on how to contact the store. It provides a name, email address, and a contact form.  
 - Users can fill out the contact form and submit it. The server side will store it in the database so the store admin can see and process all of the messages.  
 
 #### **15. Register and Log In Page**  
-[See the image of Register page here](media/readme/register-page.png)  
-[See the image of Login page here](media/readme/login-page.png)  
+[See the image of Register page here](media/readme/register_mob.png)  
+[See the image of Login page here](media/readme/login_mob.png)  
 - The Register/ Sign Up page allows users to register to the website. To register, users have to provide an email address, username, and password. After registration, users will get an email confirmation that requires users to activate their account by clicking a link. Only after the account is activated, users can access the website as registered users.  
 - The login page allows registered users to log back into the website. To log in, users have to provide their email address or username, and password.  
 
 #### **16. Product Management / Add Product page (Admin / Superuser only)**  
-[See the image of Product Management page here](media/readme/add-product-page.png)  
+[See the image of Product Management page here](media/readme/management_mob.png)  
 - The Product Management page is only available for Admin or Superuser. This page can be accessed by clicking My Account on the Navbar after logging in as an admin.  
 - The Product Management page features a form that functions to add a product to the store. On this form, the admin can fill out the category, subcategory, name,price, rating, and image.  
 - To submit the new product, an Add Product button is placed on the bottom-center of the page. A cancel button is also available which directs users to the
  products page.  
 
 #### **17. Edit Product page (Admin / Superuser only)**  
-[See the image of Edit Product page here](media/readme/edit-product-page.png)  
+[See the image of Edit Product page here](media/readme/edit_product.png)  
 - The Edit Product page is only available for Admin or Superuser. This page can be accessed by clicking the Edit link that is available on each product on the Products page, or on the Individual Product page, after logging in as an admin.  
 - The Edit Product page's design and layout are the same as Add Product page to ensure a consistent experience and minimal learning curve for the admin.  
 - To edit the product, an Update Product button is placed on the bottom-center of the page. A cancel button is available as well which will direct them back to the products page.  
@@ -412,7 +399,7 @@ Error pages for 403, 404, and 500 errors were created to ensure a great user exp
 #### **18. Delete Product Functionality (Admin / Superuser only)**  
 - The Edit Product functionality is only available for Admin or Superuser. This functionality can be accessed by clicking the Edit link that is available on each product on the Products page, or on the Individual Product page, after logging in as an admin.  
 - After the admin clicks the Delete button, a confirmation modal will pop out to confirm if they want to delete it. The modal comes with the product name and image for the admin to be sure that it is the right product.  
-![Confirmation modal before deleting a product](media/readme/delete-product-modal.png "Confirmation modal before deleting a product")   
+[Confirmation modal before deleting a product](media/readme/productdelete_modal.png "Confirmation modal before deleting a product")   
 
 
 [Back to top &uarr;](https://github.com/lisaloudness/gift_nook) 
