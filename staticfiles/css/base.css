@@ -53,12 +53,13 @@ body {
 }
 
 .btn-purple {
-    background: rgb(180, 10, 140);
+    background: rgb(192, 101, 165);
     color: white;
 }
 
 .btn-review {
     background: rgba(178, 94, 146, 0.7);
+    color: white;
 }
 
 .btn-purple-inverted {
