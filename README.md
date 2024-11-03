@@ -401,9 +401,297 @@ Error pages for 403, 404, and 500 errors were created to ensure a great user exp
 - After the admin clicks the Delete button, a confirmation modal will pop out to confirm if they want to delete it. The modal comes with the product name and image for the admin to be sure that it is the right product.  
 [Confirmation modal before deleting a product](media/readme/productdelete_modal.png "Confirmation modal before deleting a product")   
 
+#### **19. CRUD Functionality**
+  Within my site users have the ability to:
+  * CREATE by adding reviews 
+  * READ by searching for products within the database
+  * UPDATE by editing their orders and reviews
+  * DELETE their orders and reviews
 
-[Back to top &uarr;](https://github.com/lisaloudness/gift_nook) 
+  [Back to top &uarr;](https://github.com/lisaloudness/gift_nook) 
 <br/>
+
+## Technologies Used
+1. [Balsamiq:](https://balsamiq.com/)
+   - Balsamiq was used to create the [wireframes](#wireframes) during the design process
+2. [dbdiagram:](https://dbdiagram.io)
+   - dbdiagram was used to create the [database schema](#database-diagram) during the design process
+3. [Django:](https://www.djangoproject.com/)
+   - Django was used to create the Python web framework.
+4. [Djecrety:](https://djecrety.ir/)
+   - Djecrety was used to create the Secret Key.
+5. [Bootstrap:](https://getbootstrap.com/)
+   - Bootstrap was used to assist with the responsiveness and styling of the website.
+6. [JQuery:](https://releases.jquery.com/)
+   - jQuery was used in conjunction with Bootstrap to add interactivity.
+8. [Google Fonts:](https://fonts.google.com/)
+   - Google fonts were used to import the 'XXXXX' font into the style.css file which is used for my text throughout.
+9. [Font Awesome:](https://fontawesome.com/)
+   - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+10. [Favicon.io:](https://favicon.io/)
+   - Favicon.io was used to create the icon on the web page tab.
+11. [I Love IMG:](https://www.iloveimg.com/resize-image)
+   - I Love IMG was used to crop and resize all images to enhance performance and increase Lighthouse scores during testing.
+12. [Gitpod](https://gitpod.io)
+   - Gitpod was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+13. [GitHub:](https://github.com/)
+   - GitHub was used to store the projects code after being pushed from Git.
+14. [AWS:](https://aws.amazon.com/)
+   - AWS was used to store my static and media files.
+15. [ElephantSQL:](https://elephantsql.com/)
+   - Elephant SQL was used as my PostgreSQL database.
+16. [Heroku:](https://heroku.com/)
+   - Heroku was used to deploy my project.
+17. [Stripe:](https://stripe.com/)
+   - Stripe was used to facilitate payments.     
+
+## Testing
+### Google's Lighthouse Performance
+Testing was carried out on selected pages for both mobile and desktop. I was alerted to the fact that some of my images needed resizing during this testing so it proved very worthwhile.    
+The Home Page (Desktop)
+![Lighthouse](media/readme/LH_DESKTOP_HOME.png)
+The Home Page (Mobile)      
+![Lighthouse](media/readme/LH_MOBILE_HOME.png)    
+The Products Page (Mobile)  
+![Lighthouse](media/readme/LH_MOBILE_PRODUCTS.png)    
+The Contact Us Page (Desktop)  
+![Lighthouse](media/readme/LH_DESKTOP_CONTACT.png)     
+The Articles Page (Desktop)    
+![Lighthouse](media/readme/LH_DESKTOP_ARTICLES.png)     
+
+### Browser Compatibility
+I have tested compatibility on the following browsers. Safari, Chrome, Edge and Firefox.    
+
+### Responsiveness
+Responsive on all device sizes - This was checked using [Am I Responsive](https://ui.dev/amiresponsive) and by asking friends and family to test it on their devices. The devices checked included Samsung Galaxy, iPhone 8 and 10, iPad Air, Chromebook, Laptop and PC.    
+
+### Code Validation
+- **HTML**    
+The [W3 HTML5](https://validator.w3.org/) validation tool was used. I validated each page by direct input and URI.  There were no errors or warnings to show.
+![HTML Validator](media/readme/html_validation.png)              
+- **CSS**    
+The [W3 CSS](https://jigsaw.w3.org/css-validator/) validation tool was used. I validated by URI. No errors were found. 
+![CSS Validator](media/readme/css_validation.png)
+- **JS**    
+The [jshint](https://www.jshint.com/) validation tool was used. There were errors relating to the use of $ but this was necessary for stripe initialisation so can be dismissed. No other syntax errors were identified.        
+![JS Validator](media/readme/js_validation.png)
+- **PYTHON**    
+The [CI Python Linter](https://pep8ci.herokuapp.com/) validation tool was used. Flake8 error checking was used in my IDE throughout development. All custom python code was tested in the CI Python Linter and the results were all clear, no errors found.      
+    
+### Manual Testing user stories
+I asked family, friends and work colleagues to test my site on their devices and report back any issues. This group encompassed a wide range of ages and abilities. I felt this gave me a fair representation of how my app would be used in a real world situation and the feedback was very useful.      
+User Story |  Test | Pass
+--- | --- | :---:
+Unregistered user tries to log in | Flash message 'Not Yet Registered' and redirect to Register page | &check;
+Registered user enters the incorrect password | Flash message 'Incorrect Password and/or Username' | &check;
+User tries to create a username or password without the minimum number of characters | Helper text explains you need to use more characters | &check;
+User tries to perform a search without entering a keyword | Helper text appears 'Please enter a search term' |  &check;
+User performs a search with no results | Message 'No Products found for....' | &check;
+Admin adds a product without an image | Placeholder image is displayed instead | &check;
+User tries to edit/delete a review not created by them | Edit/Delete buttons are not available to them | &check;      
+
+### Manual Testing features
+| Status | feature
+|:-------:|:--------|
+| &check; | User can perform a search of the database
+| &check; | User can send a message to admin via the contact us form
+| &check; | User can add a product to the basket and adjust quantity or remove it
+| &check; | User can progress to checkout and complete payment
+| &check; | User can register successfully and has access to their profile page
+| &check; | Registered User can view past orders
+| &check; | Registered User can update personal details
+| &check; | Registered User can add a review
+| &check; | Registered User can delete their own review
+| &check; | Registered User can log out
+| &check; | Admin can add a product
+| &check; | Admin can edit/delete products 
+## Bugs
+List of bugs and how I fixed them.
+| Bug | Fix
+|:-------:|:--------|
+| FAQ image was not responsive  |  added class img-fluid to div |
+| CSS was not displaying on deployed site  |  recreated AWS bucket keys |
+| Products not appearing on deployed site  |  database url was incorrect in env.py |
+| Contact Us app not connecting to database  |  deleted and remigrated |
+## Deployment
+This website is deployed to Heroku from a GitHub repository, the following steps were taken:
+
+#### Creating Repository on GitHub
+- First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
+- Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
+- Once the repository was created, I clicked the green **gitpod** button to create a workspace in gitpod so that I could write the code for the site.
+  
+#### Making a Local Clone
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisaloudness/gift_nook)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/lisaloudness/gift_nook
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/lisaloudness/gift_nook
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+#### Forking the Github Repository 
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/lisaloudness/gift_nook.git)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+#### Creating an app on Heroku
+- After creating the repository on GitHub, head over to [heroku](https://www.heroku.com/) and sign in.
+- On the home page, click **New** and **Create new app** from the drop down.
+- Give the app a name(this must be unique) and select a **region** I chose **Europe** as I am in Europe, Then click **Create app**.
+
+#### Deploying to Heroku.
+- In GitPod CLI, the root directory of the project, run: pip3 freeze --local > requirements.txt to create a requirements.txt file containing project dependencies.
+- In the Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'. Open the Procfile. - Inside the file, check that web: gunicorn giftnook.wsgi:application has been added when creating the file Save the file.
+- Push the 2 new files to the GitHub repository
+- Login to Heroku, select Create new app, add the name for your app and choose your closest region.
+- Navigate to the Deploy tab on Heroku dashboard and select Github, search for your repository and click 'connect'.
+- Navigate to the settings tab, click reveal config vars and input the following:
+
+
+| Key | Value
+|:-------:|:--------|
+| AWS_ACCESS_KEY_ID  |    |
+| AWS_SECRET_ACCESS_KEY  |    |
+| DATABASE_URL  |    |
+| EMAIL_HOST_PASS  |    |
+| EMAIL_HOST_USER  |    |
+| STRIPE_PUBLIC_KEY  |    |
+| STRIPE_SECRET_KEY  |    |
+| STRIPE_WH_SECRET  |    |
+| USE_AWS  |    |
+| SECRET_KEY   |     |
+
+Actual Enviroment variables not disclosed for security
+
+#### Amazon Web Services - AWS & Cloning Instructions
+
+In this project for the storing of static files and images i used Amazon Web Services. The steps I took to achieve this are listed below. 
+
+1. Open up [Amazon Web Services](https://aws.amazon.com/) in your browser
+2. Click on Create AWS Account 
+3. You will need to complete all of the required questions asked by Amazon during the sign in process relative to you.
+4. Once registration is complete you can navigate to your AWS dashboard
+5. I used Amazon S3 services, if its your first time on the dashboard the quickest way to find it is to type S3 into the search bar. 
+6. When you select S3 you will see a button that says "Create Bucket", click this and give your bucket a name. Tip: Name your bucket something relevant to the project its associated with. You will also need to select the region closest to you in the drop down menu also on this page. 
+7. Un-tick the box that says "Block all public access". AWS may give you a warning but you can ignore this as the static files need to be public. Now click the "Create bucket" button
+
+> Go to bucket properties<br>
+> Turn on static web hosting<br>
+> in the index and error text inputs, add index.html and error.html and then save<br>
+
+8. On the permissions tab in the CORS configuration section i used the code below.
+
+![CORS Configuration](media/readme/cors_config.jpg)
+
+
+9. Now go to the bucket policy tab and select policy generator. I selected the following:<br>
+> Type Of Policy: S3 bucket policy<br>
+> From action drop down select: "get object"<br>
+> You will be asked for your ARN, copy and paste it from the bucket policy page.<br>
+> Click add statement<br>
+> Then click on the generate policy button<br>
+> Then copy and paste the new policy thats generated into your bucket policy<br>
+> Be sure to add /* onto the end of the resources key<br>
+> Click save.<br>
++
+10. Now go to Access Control List, set list objects permission to everyone (Public)
+
+11. We now ned to create a new group and user to access the bucket. Navigate back to the search page and type in the search box IAM (Identity Access Management) 
+> Click create a new group and name it, a good one is manage-`insert project name here`<br>
+> Click through the pages and click on the create group button<br>
+
+12. Now we need ot create a group policy. Click on policies option in the menu and click on create policy
+> Select the JSON tab and then import managed policies.
+> search s3 and select on Amazons3fullaccess and import.
+> In the resources section, paste in the ARN that we used previously. You will want to enter the ARN twice and at the end of the second one add a *
+
+> Click through to review policy, give it a name and description and click generate policy
+
+13. Now click on groups again from the side menu, select the group you had previously created, click attach policy, search for the policy we created using the search bar, and then click attach policy. 
+
+14. Finally we need to create a user. Click users from the menu, click add user, create a user name, select programmatic access and click next. 
+
+15. Select the group to add your user too, click through to the end and then click create user. Download the CSV file containing the user keys needed to access the app<br>
+<strong>Warning: Do not share the keys from this CSV file with anyone or make them public by pushing them to your Github</strong><br><br>
+
+#### Connect bucket to Django & Cloning Instructions
+
+To connect Django to the bucket I followed the following steps. 
+
+1. Install 2 new packages
+`pip3 install boto3`
+`pip3 install django-storages`
+
+2. Again we need to freeze these so they are added to the requirements.txt file and deployed ot Heroku when we deploy
+`pip3 freeze > requirements.txt`
+
+3. In settings.py we will then need to add `storages` to the installed apps section.
+
+4. An environment variable called USE_AWS needs to be set up to run the code on Heroku.
+
+5. Now back in Heroku click on settings tab and then click reveal config vars, set up the environmental variables as required. USE_AWS should have a value of True.
+
+6. At this point i also deleted the `DISABLE_COLLECTSTATIC` variable. 
+
+7. Now back in Gitpod we need to create a custom_storages.py file to tell django that in production we want to use Amazon S3 to store our static and media files. The 2 custom classes we need ot use to action this is:
+
+`class StaticStorage(S3Boto3Storage):`
+&nbsp;&nbsp;`location = settings.STATICFILES_LOCATION`
+
+`class MediaStorage(S3Boto3Storage):`
+&nbsp;&nbsp;`location = settings.MEDIAFILES_LOCATION`
+
+8. Now save, add, commit and push to Github for the above changes to take place.
+
+#### Add Media files to AWS & Cloning Instructions
+
+Finally we need to upload all the images to S3. To do this I followed the following steps:
+
+1. Back on AWS in your AWS bucket, create a new folder called media
+2. Select upload and then upload all your image folders and files. When uploading the files be sure to set the permissions to Everyone (Public access) 
+
+#### Stripe & Cloning Instructions
+
+The final step now is to add the stripe keys to the config variables. These values you can get from your stripe dashboard,. 
+Remember all of your config vars need to match what you have in your settings.py file.
+
+## Credits
+### Code
+- Code Institute Boutique Ado walkthrough used as the basis for my site. I then added the reviews and messages functionality.
+- I found additional learning about Django here [Django Project](https://forum.djangoproject.com/)
+- Creating reviews and ratings in Django [YouTube](https://www.youtube.com/watch?v=UgEVC7oJDHI)
+- How to build an e-commerce site in Django [YouTube](https://www.youtube.com/watch?v=Y5vvGQyHtpM)
+- How to add Product Reviews [Medium](https://medium.com/code-with-stein/product-reviews-how-to-build-an-ecommerce-website-using-django-3-and-vue-js-part-20-1ecc788a1603)
+- How to make card images the same size as each other [Stack Overflow](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width)
+- Resetting db in Django by Farheen Shahid [Scaler.com](https://www.scaler.com/topics/django/resetting-db-in-django/)
+- Creating a custom 404 page in Django [W3 Schools](https://www.w3schools.com/django/django_404.php)
+### Content    
+Product images sourced from LisaAngel. All text content created by myself. Website for educational purposes only.    
+
+  
+    
+## Acknowledgments
+
+- Tutor Support at Code Institute for continuous support and patience.
 
 
 

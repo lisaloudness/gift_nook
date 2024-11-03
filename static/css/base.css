@@ -145,7 +145,7 @@ footer {
     justify-content: right;
     -webkit-box-align: right;
     -ms-flex-align: right;
-    align-items: right;
+    align-items: center
 }
 
 .card {
@@ -238,7 +238,7 @@ img {
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 5;
+    border-radius: 5px;
 
     /* standard bootstrap btn transitions */
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

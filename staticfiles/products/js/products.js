@@ -1,6 +1,6 @@
 $('.btt-link').click(function(e) {
-    window.scrollTo(0,0)
-})
+    window.scrollTo(0,0);
+});
 
 
 $('.btn-delete').on('click', function(e) {
@@ -35,4 +35,4 @@ $('#sort-selector').change(function() {
 
         window.location.replace(currentUrl);
     }
-})
+});
