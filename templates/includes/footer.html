@@ -5,28 +5,28 @@
                 <div class="col-4 col-md-3">
                     <p class="text-uppercase m-0"><strong>Customer Service</strong></p>
                     <ul class="list-unstyled">
-                        <li class="mt-2"><a href="{% url 'faq' %}">FAQ</a></li>
-                        <li class="mt-2"><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'faq' %}">FAQ</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'contact_us' %}">Contact Us</a></li>
                         {% if request.user.is_authenticated %}
-                        <li class="mt-2"><a href="{% url 'profile' %}">My Account</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'profile' %}">My Account</a></li>
                         {% else %}
-                        <li class="mt-2"><a href="{% url 'account_signup' %}">Sign Up</a></li>
-                        <li class="mt-2"><a href="{% url 'account_login' %}">Log In</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'account_login' %}">Log In</a></li>
                         {% endif %}
                     </ul>
                 </div>
                 <div class="col-4 col-md-3">
                     <p class="text-uppercase m-0"><strong>About Us</strong></p>
                     <ul class="list-unstyled">
-                        <li class="mt-2"><a href="{% url 'about_us' %}">Our Story</a></li>
-                        <li class="mt-2"><a href="{% url 'ethos' %}">Ethos</a></li>
-                        <li class="mt-2"><a href="{% url 'all_articles' %}">Articles</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'about_us' %}">Our Story</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'ethos' %}">Ethos</a></li>
+                        <li class="mt-2 text-grey"><a href="{% url 'all_articles' %}">Articles</a></li>
                     </ul>
                 </div>
                 <div class="col-3 col-md-3">
                     <p class="text-uppercase m-0"><strong>others</strong></p>
                     <ul class="list-unstyled">
-                        <li class="mt-2"><a href="#">Privacy & Cookie Policy</a></li>
+                        <li class="mt-2 text-grey"><a href="#">Privacy & Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-3 d-flex flex-column">

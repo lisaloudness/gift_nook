@@ -120,7 +120,7 @@ body {
 footer a:hover,
 footer a:active,
 footer a:focus {
-    color: #7a413b;
+    color: #733e5c;
 }
 
 .navbar {
@@ -130,6 +130,11 @@ footer a:focus {
 footer {
     font-size: 14px;
 }
+
+.text-grey a {
+    color: #4b4f54;
+}
+
 
 .social-circle {
     width: 40px;
