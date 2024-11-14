@@ -425,29 +425,25 @@ Error pages for 403, 404, and 500 errors were created to ensure a great user exp
 6. [JQuery:](https://releases.jquery.com/)
    - jQuery was used in conjunction with Bootstrap to add interactivity.
 8. [Google Fonts:](https://fonts.google.com/)
-   - Google fonts were used to import the 'XXXXX' font into the style.css file which is used for my text throughout.
+   - Google fonts were used to import the 'Poppins' font into the style.css file which is used for my text throughout.
 9. [Font Awesome:](https://fontawesome.com/)
    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 10. [Favicon.io:](https://favicon.io/)
    - Favicon.io was used to create the icon on the web page tab.
-11. [I Love IMG:](https://www.iloveimg.com/resize-image)
-   - I Love IMG was used to crop and resize all images to enhance performance and increase Lighthouse scores during testing.
-12. [Gitpod](https://gitpod.io)
+11. [Gitpod](https://gitpod.io)
    - Gitpod was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-13. [GitHub:](https://github.com/)
+12. [GitHub:](https://github.com/)
    - GitHub was used to store the projects code after being pushed from Git.
-14. [AWS:](https://aws.amazon.com/)
+13. [AWS:](https://aws.amazon.com/)
    - AWS was used to store my static and media files.
-15. [ElephantSQL:](https://elephantsql.com/)
-   - Elephant SQL was used as my PostgreSQL database.
-16. [Heroku:](https://heroku.com/)
+14. [Heroku:](https://heroku.com/)
    - Heroku was used to deploy my project.
-17. [Stripe:](https://stripe.com/)
+15. [Stripe:](https://stripe.com/)
    - Stripe was used to facilitate payments.     
 
 ## Testing
 ### Google's Lighthouse Performance
-Testing was carried out on selected pages for both mobile and desktop. I was alerted to the fact that some of my images needed resizing during this testing so it proved very worthwhile.    
+Testing was carried out on selected pages for both mobile and desktop.
 The Home Page (Desktop)
 ![Lighthouse](media/readme/LH_DESKTOP_HOME.png)
 The Home Page (Mobile)      
