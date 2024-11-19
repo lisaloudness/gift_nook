@@ -4,6 +4,7 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def view_bag(request):
     """Bag contents view """
 
@@ -31,9 +32,10 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
     product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
-    
+
     if item_id in bag:
         bag.pop(item_id)  # Remove the item from the bag
         messages.success(request, f'Removed {product.name} from your bag')
         request.session['bag'] = bag
+
         return HttpResponse(status=200)

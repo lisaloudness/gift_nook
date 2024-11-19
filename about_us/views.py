@@ -6,6 +6,7 @@ def about_us(request):
 
     return render(request, 'about_us/about_us.html')
 
+
 def ethos(request):
     """ A view to return the ethos page """
 

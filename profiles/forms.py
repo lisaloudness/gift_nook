@@ -7,8 +7,7 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         exclude = ('user',)
 
-
-def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
@@ -21,7 +20,6 @@ def __init__(self, *args, **kwargs):
             'default_town_or_city': 'Town or City',
             'default_street_address1': 'Street Address 1',
             'default_street_address2': 'Street Address 2',
-            
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
@@ -32,7 +30,6 @@ def __init__(self, *args, **kwargs):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs[
+                'class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
-
-            

@@ -20,7 +20,7 @@ Please note that this website is created for Milestone Project 4 in Code Institu
 ## **UX DEVELOPMENT PLANE**   
 ### **A. Strategy Plane**  
 #### **Project Goals**   
-The primary goal of this project is to create an e-commerce website that a fully-functioning e-commerce platform that is visually pleasing and intuative to a first-time user. The website has basic functionalities that are expected in an e-commerce website (such as sign up/login, ability to purchase items, and payments transactions), but also to ensure that users have a great experience and interaction within the site through additional functionalities such as writing product reviews and reading blogs.
+The primary goal of this project is to create an e-commerce website thats a fully-functioning e-commerce platform that is visually pleasing and intuative to a first-time user. The website has basic functionalities that are expected in an e-commerce website (such as sign up/login, ability to purchase items, and payments transactions), but also to ensure that users have a great experience and interaction within the site through additional functionalities such as writing product reviews and reading blogs.
 
 #### **User Goals**  
 The user is looking for:
