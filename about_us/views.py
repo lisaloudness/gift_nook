@@ -1,3 +1,4 @@
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.shortcuts import render
 
 
@@ -11,3 +12,9 @@ def ethos(request):
     """ A view to return the ethos page """
 
     return render(request, 'about_us/ethos.html')
+
+
+def privacy(request):
+    """ A view to return the privacy page """
+
+    return render(request, 'about_us/privacy.html')

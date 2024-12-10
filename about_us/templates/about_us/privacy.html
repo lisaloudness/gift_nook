@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} About Us Page{% endblock %}
+{% block page_header %}
+<div class="navbar-offset"></div>
+{% endblock %}
+{% block content %}
+<section>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="mt-5 mb-4 mb-sm-5 fw-bold text-uppercase">
+                    Privacy & Cookie Policy
+                </h2>
+            </div>
+        </div>
+        <div class="mt-1 mt-md-3">
+            <div class="my-4">
+                <h5 class="fw-bold">
+                    <strong>Your Privacy</strong>
+                </h5>
+                <p>
+                    At Gift Nook we are committed to protecting and respecting your privacy. The Gift Nook Team all shop online, both with Gift Nook and other internet sites so we understand how important privacy is. This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us.  Please read the following to understand our practices regarding your personal data and how it will be treated and if you have any questions, please just ask.
+                </p>
+                <p>
+                    We use information about you in the following ways:
+                </p>
+                <ul>
+                    <li>To process and fulfil your orders.</li>
+                    <li>To ensure that content on the Website is presented in the most effective manner for you and for your computer.</li>
+                    <li>To allow you to participate in interactive features of the Website.</li>
+                    <li>To notify you about changes to the Website or products.</li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="my-4">
+                <h5 class="fw-bold">
+                    <strong>Cookies</strong>
+                </h5>
+                <p>
+                    Gift Nook uses a number of cookies for the website to function correctly, understand more about your visit and help personalise your experience.
+                </p>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'products' %}" class="btn btn-purple my-5">
+                Browse Our Store
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

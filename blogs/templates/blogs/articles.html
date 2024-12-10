@@ -32,9 +32,11 @@
                         <div class="card-body px-0">
                             <h6 class="card-title fw-bold">{{ blog.title }}</h6>
                             <p class="card-text">{{ blog.paragraph1|truncatechars:40 }}</p>
+                            <p class="text-grey"><strong>
                             <a href="{% url 'article_detail' blog.id %}">Read the article 
                                 <i class="fas fa-arrow-right"></i>
-                            </a>
+                            </a></strong>
+                            </p>
                         </div>
                     </div>
                 </div>
